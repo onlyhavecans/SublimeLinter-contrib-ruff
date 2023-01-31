@@ -2,12 +2,10 @@ from SublimeLinter.lint import PythonLinter
 
 
 class ruff(PythonLinter):
-    cmd = ('ruff', '-')
+    cmd = ("ruff", "check", "-")
     regex = (
-        r'^(?P<filename>.+?):(?P<line>\d+):(?P<col>\d+): '
-        r'(?P<code>.+?) (?P<message>.+)$'
+        r"^(?P<filename>.+?):(?P<line>\d+):(?P<col>\d+): "
+        r"(?P<code>.+?) (?P<message>.+)$"
     )
     multiline = False
-    defaults = {
-        'selector': 'source.python'
-    }
+    defaults = {"selector": "source.python"}
